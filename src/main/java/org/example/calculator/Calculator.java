@@ -20,24 +20,25 @@ public class Calculator {
                     System.out.println("Saliendo...");
                     break;
                 } else {
-                    System.out.println("Opcion erronea: " + operacion);
+
+                    System.out.println("Opcion erronea: " + "'" + operacion + "'" + ", elige una opcion del 1 al 5.");
                 }
 
                 System.out.println(" ");
             } catch (Exception e) {
-                System.out.println("Ocurrio un error: " + e.getMessage());
-                sc.nextLine(); // Consume el carácter de nueva línea en caso de error
+                System.out.println("Ocurrio un error, ingresaste " + "'" + sc.nextLine() + "'" + ", elige una opcion del 1 al 5.");
+                // Consume el carácter de nueva línea en caso de error
             }
         } // Fin while
     } // Fin Main
 
     private static void mostrarMenu() { //funcion menu
         System.out.println("""
-                1. Suma
-                2. Resta
-                3. Multiplicar
-                4. Dividir
-                5. Salir
+                1. Suma.
+                2. Resta.
+                3. Multiplicar.
+                4. Dividir.
+                5. Salir.
                 """);
 
         System.out.print("Selecciona la operacion a realizar: ");
@@ -63,10 +64,10 @@ public class Calculator {
                 System.out.println("Resultado de la multiplicacion: " + resultado);
                 break;
             case 4: // Division
-                if (num2 > 0){
-                resultado = num1 / num2;
-                System.out.println("Resultado de la division: " + resultado);}
-                else {
+                if (num2 > 0) {
+                    resultado = num1 / num2;
+                    System.out.println("Resultado de la division: " + resultado);
+                } else {
                     System.out.println("No se puede dividir por '0', prueba otro numero");
                 }
                 break;
